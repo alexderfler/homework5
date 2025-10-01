@@ -1,0 +1,265 @@
+.header,
+.navbar,
+.main-content,
+.footer {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+}
+
+.content-section,
+.project-card,
+.skills-row > div {
+    background: rgba(0, 113, 227, 0.025);
+    backdrop-filter: blur(14px);
+    border-radius: 25px;
+}
+
+.education-list,
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-item,
+.experience-role {
+    background: rgba(0, 113, 227, 0.025);
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.education-header,
+.experience-role-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.experience-company {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.experience-company-name {
+    margin: 0;
+}
+
+.experience-role-summary h4 {
+    margin: 0;
+}
+
+.experience-dates,
+.education-meta {
+    font-weight: 500;
+    color: #555;
+}
+
+.experience-role ul {
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "navbar"
+        "main"
+        "footer";
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 242px 0 170px;
+}
+
+.header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 24px 16px;
+    height: 110px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1;
+}
+
+.header h1,
+.header h2 {
+    margin: 0;
+}
+
+.navbar {
+    grid-area: navbar;
+    width: 100%;
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    min-height: 72px;
+    gap: 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.navbar a {
+    flex: 1 1 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-content {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 25px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content-section {
+    flex: 1 1 320px;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px 16px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-card {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.project-card h3 {
+    margin-top: 15px;
+}
+
+.project-photo {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-photo:hover {
+    transform: scale(1.05);
+}
+
+.button {
+    background-color: rgba(0, 113, 227, 1);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 25px;
+}
+
+.button:hover {
+    background-color: rgba(0, 113, 227, 1);
+    border-radius: 25px;
+}
+
+.skills-row {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skills-row > div {
+    padding: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.skills-row > div:hover {
+    transform: scale(1.05);
+}
+
+.project-gallery {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skills-row .featured {
+    grid-column: span 2;
+}
+
+.project-gallery .featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+@media (min-width: 660px) {
+    .skills-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-row .featured,
+    .project-gallery .featured {
+        grid-column: span 2;
+    }
+
+    .experience-role {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .experience-role-summary {
+        flex: 0 0 260px;
+    }
+}
